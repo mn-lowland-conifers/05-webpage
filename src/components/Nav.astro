@@ -1,21 +1,28 @@
 ---
+import { Image } from 'astro:assets';
+import badge from '../assets/lowland-conifer-badge.png';
+import { withBase } from '../utils/paths';
+
 const links = [
-	{ href: '/', label: 'Home' },
-	{ href: '/map/', label: 'Map' },
-	{ href: '/database/', label: 'Database' },
-	{ href: '/resources/', label: 'Resources' },
+	{ href: withBase(''), label: 'Home' },
+	{ href: withBase('map/'), label: 'Map' },
+	{ href: withBase('database/'), label: 'Database' },
+	{ href: withBase('resources/'), label: 'Resources' },
 ];
 
 const path = Astro.url.pathname;
 function isActive(href: string) {
-	if (href === '/') return path === '/' || path === '';
+	if (href === withBase('')) return path === href;
 	return path.startsWith(href);
 }
 ---
 
 <header>
 	<nav>
-		<a class="brand" href="/">MN Peatland Carbon Mapping</a>
+		<a class="brand" href={withBase('')}>
+			<Image src={badge} alt="MN Lowland Conifers" width={40} height={40} />
+			MN Peatland Carbon Mapping
+		</a>
 		<ul>
 			{
 				links.map((link) => (
@@ -48,10 +55,18 @@ function isActive(href: string) {
 	}
 
 	.brand {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
 		font-weight: 400;
 		font-size: 1.15rem;
 		color: #292929;
 		text-decoration: none;
+	}
+
+	.brand img {
+		border-radius: 50%;
+		object-fit: cover;
 	}
 
 	ul {

@@ -1,9 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { withBase } from '../../utils/paths';
 ---
 
 <Layout title="Depth Model" description="Modeled peat depth across Minnesota.">
-	<p class="breadcrumb"><a href="/map/">Map</a> / Depth Model</p>
+	<p class="breadcrumb"><a href={withBase('map/')}>Map</a> / Depth Model</p>
 	<h1>Depth Model</h1>
 	<p>
 		This model predicts peat depth at mapped locations, built from field-measured depths and

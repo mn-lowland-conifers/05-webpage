@@ -1,9 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { withBase } from '../../utils/paths';
 ---
 
 <Layout title="Probability Model" description="Modeled probability of peatland occurrence across Minnesota.">
-	<p class="breadcrumb"><a href="/map/">Map</a> / Probability Model</p>
+	<p class="breadcrumb"><a href={withBase('map/')}>Map</a> / Probability Model</p>
 	<h1>Probability Model</h1>
 	<p>
 		This model estimates the likelihood that a given location is peatland, based on

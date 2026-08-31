@@ -1,9 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { withBase } from '../../utils/paths';
 ---
 
 <Layout title="Carbon Stock Model" description="Modeled soil carbon stock across Minnesota peatlands.">
-	<p class="breadcrumb"><a href="/map/">Map</a> / Carbon Stock Model</p>
+	<p class="breadcrumb"><a href={withBase('map/')}>Map</a> / Carbon Stock Model</p>
 	<h1>Carbon Stock Model</h1>
 	<p>
 		This model combines the probability and depth models with bulk density and carbon content

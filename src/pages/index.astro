@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { withBase } from '../utils/paths';
 ---
 
 <Layout title="Home">
@@ -8,9 +9,9 @@ import Layout from '../layouts/Layout.astro';
 		<p class="subtitle">Statewide peatland probability, depth, and carbon stock mapping.</p>
 
 		<div class="button-row">
-			<a class="button" href="/map/">Explore Maps</a>
-			<a class="button" href="/database/">Explore Database</a>
-			<a class="button" href="/resources/">Read Documentation</a>
+			<a class="button" href={withBase('map/')}>Explore Maps</a>
+			<a class="button" href={withBase('database/')}>Explore Database</a>
+			<a class="button" href={withBase('resources/')}>Read Documentation</a>
 		</div>
 	</section>
 
