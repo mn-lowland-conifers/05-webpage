@@ -6,17 +6,17 @@ const models = [
 	{
 		href: withBase('map/probability-model/'),
 		title: 'Probability Model',
-		description: 'Where peatlands are likely to occur across the state.',
+		description: 'Where peatlands occur',
 	},
 	{
 		href: withBase('map/depth-model/'),
 		title: 'Depth Model',
-		description: 'Predicted peat depth at mapped locations.',
+		description: 'Predicted peat depth',
 	},
 	{
 		href: withBase('map/carbon-stock/'),
-		title: 'Carbon Stock Model',
-		description: 'Estimated soil carbon stock derived from depth and bulk density.',
+		title: 'Peat Decomposition',
+		description: 'Peat decomposition class in the top meter',
 	},
 ];
 ---
@@ -24,8 +24,7 @@ const models = [
 <Layout title="Map" description="Geospatial peatland probability, depth, and carbon stock model outputs.">
 	<h1>Map</h1>
 	<p>
-		Three linked models make up the statewide map: peatland probability, peat depth, and carbon
-		stock. Each page below describes the model and its outputs.
+		Statewide Inferences
 	</p>
 
 	<ul class="model-list">
