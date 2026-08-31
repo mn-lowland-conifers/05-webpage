@@ -1,0 +1,83 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const {
+	title,
+	description = 'Mapping peatland carbon probability, depth, and stock across Minnesota.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title} | MN Peatland Carbon Mapping</title>
+	</head>
+	<body>
+		<Nav />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--ink: #1f2d24;
+		--muted: #5a6b60;
+		--accent: #4c8c5f;
+	}
+
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		min-height: 100%;
+	}
+
+	body {
+		font-family:
+			Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		color: var(--ink);
+		background: #fbfaf7;
+		display: flex;
+		flex-direction: column;
+	}
+
+	main {
+		flex: 1;
+		max-width: 960px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 2.5rem 1.5rem;
+		box-sizing: border-box;
+	}
+
+	h1,
+	h2,
+	h3 {
+		color: var(--ink);
+		line-height: 1.2;
+	}
+
+	p {
+		color: var(--muted);
+		line-height: 1.6;
+	}
+
+	a {
+		color: var(--accent);
+	}
+</style>

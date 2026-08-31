@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const models = [
+	{
+		href: '/map/probability-model/',
+		title: 'Probability Model',
+		description: 'Where peatlands are likely to occur across the state.',
+	},
+	{
+		href: '/map/depth-model/',
+		title: 'Depth Model',
+		description: 'Predicted peat depth at mapped locations.',
+	},
+	{
+		href: '/map/carbon-stock/',
+		title: 'Carbon Stock Model',
+		description: 'Estimated soil carbon stock derived from depth and bulk density.',
+	},
+];
+---
+
+<Layout title="Map" description="Geospatial peatland probability, depth, and carbon stock model outputs.">
+	<h1>Map</h1>
+	<p>
+		Three linked models make up the statewide map: peatland probability, peat depth, and carbon
+		stock. Each page below describes the model and its outputs.
+	</p>
+
+	<ul class="model-list">
+		{
+			models.map((model) => (
+				<li>
+					<a href={model.href}>{model.title}</a>
+					<p>{model.description}</p>
+				</li>
+			))
+		}
+	</ul>
+
+	<style>
+		.model-list {
+			list-style: none;
+			padding: 0;
+			margin: 2rem 0 0;
+			display: grid;
+			gap: 1rem;
+		}
+
+		.model-list li {
+			padding: 1.25rem;
+			border: 1px solid #e2e8e4;
+			border-radius: 12px;
+			background: #ffffff;
+		}
+
+		.model-list a {
+			font-weight: 600;
+			font-size: 1.05rem;
+			text-decoration: none;
+		}
+
+		.model-list p {
+			margin: 0.35rem 0 0;
+			font-size: 0.9rem;
+		}
+	</style>
+</Layout>
