@@ -1,7 +1,7 @@
-# MN Peatland Carbon Mapping
+# Lowland Conifers
 
-Public-facing site presenting statewide models of peatland probability, peat depth, and carbon
-stock across Minnesota, along with the underlying data and methods. Built with Astro.
+Website with access to statewide models of peatland probability, peat depth, and carbon
+stock across Minnesota.
 
 ## Project Structure
 
