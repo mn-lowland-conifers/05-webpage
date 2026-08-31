@@ -5,71 +5,30 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Home">
 	<section class="hero">
 		<h1>Minnesota Peatland Carbon Mapping</h1>
-		<p>
-			This site presents statewide models of peatland occurrence, peat depth, and carbon stock
-			across Minnesota, along with the data and methods behind them.
-		</p>
-	</section>
+		<p class="subtitle">Statewide peatland probability, depth, and carbon stock mapping.</p>
 
-	<section class="cards">
-		<a class="card" href="/map/">
-			<h2>Map</h2>
-			<p>Explore the probability, depth, and carbon stock model outputs.</p>
-		</a>
-		<a class="card" href="/database/">
-			<h2>Database</h2>
-			<p>Access the underlying observations and model outputs as downloadable data.</p>
-		</a>
-		<a class="card" href="/resources/">
-			<h2>Resources</h2>
-			<p>Read the methods, documentation, and background behind the project.</p>
-		</a>
+		<div class="button-row">
+			<a class="button" href="/map/">Explore Maps</a>
+			<a class="button" href="/database/">Explore Database</a>
+			<a class="button" href="/resources/">Read Documentation</a>
+		</div>
 	</section>
 
 	<style>
 		.hero {
-			margin-bottom: 2.5rem;
+			text-align: center;
+			padding: 1.5rem 0 2.5rem;
 		}
 
 		.hero h1 {
-			font-size: 2rem;
-			margin-bottom: 0.75rem;
+			font-size: 1.95rem;
+			margin-bottom: 0.4rem;
 		}
 
-		.hero p {
-			max-width: 640px;
-			font-size: 1.05rem;
-		}
-
-		.cards {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-			gap: 1.25rem;
-		}
-
-		.card {
-			display: block;
-			padding: 1.5rem;
-			border: 1px solid #e2e8e4;
-			border-radius: 12px;
-			background: #ffffff;
-			text-decoration: none;
-			transition: border-color 0.15s;
-		}
-
-		.card:hover {
-			border-color: #4c8c5f;
-		}
-
-		.card h2 {
-			margin: 0 0 0.5rem;
-			font-size: 1.15rem;
-			color: #1f2d24;
-		}
-
-		.card p {
-			margin: 0;
-			font-size: 0.9rem;
+		.subtitle {
+			font-style: italic;
+			color: #5a5a5a;
+			margin-bottom: 1.75rem;
 		}
 	</style>
 </Layout>
