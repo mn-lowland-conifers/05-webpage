@@ -8,6 +8,7 @@ const DOCS_URL = 'https://mn-lowland-conifers.github.io/03-peatland-carbon-model
 
 const links = [
 	{ href: withBase(''), label: 'Home' },
+	{ href: MAP_VIEWER_URL, label: 'Map', external: true },
 	{ href: withBase('database/'), label: 'Database' },
 ];
 
@@ -25,13 +26,15 @@ function isActive(href: string) {
 			MN Peatland Carbon Mapping
 		</a>
 		<ul>
-			<li>
-				<a href={MAP_VIEWER_URL} target="_blank" rel="noopener noreferrer">Map</a>
-			</li>
 			{
 				links.map((link) => (
 					<li>
-						<a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>
+						<a
+							href={link.href}
+							aria-current={isActive(link.href) ? 'page' : undefined}
+							target={link.external ? '_blank' : undefined}
+							rel={link.external ? 'noopener noreferrer' : undefined}
+						>
 							{link.label}
 						</a>
 					</li>
