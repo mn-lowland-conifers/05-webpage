@@ -3,9 +3,10 @@ import { Image } from 'astro:assets';
 import badge from '../assets/lowland-conifer-badge.png';
 import { withBase } from '../utils/paths';
 
+const MAP_VIEWER_URL = 'https://maps.mnlowlandconifercarbon.org/';
+
 const links = [
 	{ href: withBase(''), label: 'Home' },
-	{ href: withBase('map/'), label: 'Map' },
 	{ href: withBase('database/'), label: 'Database' },
 	{ href: withBase('resources/'), label: 'Resources' },
 ];
@@ -24,6 +25,9 @@ function isActive(href: string) {
 			MN Peatland Carbon Mapping
 		</a>
 		<ul>
+			<li>
+				<a href={MAP_VIEWER_URL} target="_blank" rel="noopener noreferrer">Map</a>
+			</li>
 			{
 				links.map((link) => (
 					<li>
