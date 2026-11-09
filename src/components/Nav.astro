@@ -4,11 +4,11 @@ import badge from '../assets/lowland-conifer-badge.png';
 import { withBase } from '../utils/paths';
 
 const MAP_VIEWER_URL = 'https://maps.mnlowlandconifercarbon.org/';
+const DOCS_URL = 'https://mn-lowland-conifers.github.io/03-peatland-carbon-modeling/';
 
 const links = [
 	{ href: withBase(''), label: 'Home' },
 	{ href: withBase('database/'), label: 'Database' },
-	{ href: withBase('resources/'), label: 'Resources' },
 ];
 
 const path = Astro.url.pathname;
@@ -37,6 +37,9 @@ function isActive(href: string) {
 					</li>
 				))
 			}
+			<li>
+				<a href={DOCS_URL} target="_blank" rel="noopener noreferrer">Documentation</a>
+			</li>
 		</ul>
 	</nav>
 </header>
