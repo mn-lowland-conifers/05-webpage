@@ -9,13 +9,51 @@ import Layout from '../../layouts/Layout.astro';
 		summaries and citations.
 	</p>
 
+	<section class="doc-link">
+		<h2>MN Peatland Carbon Modeling</h2>
+		<p>
+			Full methods and workflow documentation for the peatland carbon modeling component of this
+			project.
+		</p>
+		<a class="button" href="https://mn-lowland-conifers.github.io/03-peatland-carbon-modeling/" target="_blank" rel="noopener noreferrer">
+			Read the Methods Documentation
+		</a>
+	</section>
+
 	<section class="placeholder">
-		<p>Methods documentation, citation info, and links to related publications go here.</p>
+		<p>Citation info and links to related publications go here.</p>
 	</section>
 
 	<style>
-		.placeholder {
+		.doc-link {
 			margin-top: 2rem;
+			padding: 2rem;
+			border: 1px solid #e2e8e4;
+			border-radius: 12px;
+			background: #ffffff;
+		}
+
+		.doc-link h2 {
+			margin-top: 0;
+		}
+
+		.doc-link .button {
+			display: inline-block;
+			background: var(--accent);
+			color: #ffffff;
+			text-decoration: none;
+			border-radius: 4px;
+			padding: 0.68rem 1.08rem;
+			font-size: 0.95rem;
+			margin-top: 0.5rem;
+		}
+
+		.doc-link .button:hover {
+			background: #1a1a1a;
+		}
+
+		.placeholder {
+			margin-top: 1.5rem;
 			padding: 2rem;
 			border: 1px dashed #c7d2cb;
 			border-radius: 12px;
