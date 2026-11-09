@@ -46,36 +46,15 @@ import { withBase } from '../utils/paths';
 					aria-label="Compare mapped peat depth with satellite imagery"
 				/>
 			</div>
-			<figcaption>Example comparison of the statewide peat depth model output (left) against satellite imagery (right) for the same area.</figcaption>
+			<figcaption>Comparison of the predicted peat depth map (left) against satellite imagery (right)</figcaption>
 		</figure>
 
 		<div class="overview">
 			<p>
-				This website provides access to statewide maps and data from the Minnesota Lowland Conifer
-				Peatland Carbon project, including models of peatland probability, peat depth, organic
-				decomposition, and carbon stock across Minnesota. These products support the project's
-				legislative report, which was commissioned to provide spatial estimates of carbon in
-				peatland soils and aboveground biomass, develop strategies to mitigate climate change, and
-				inform recommendations for climate resilience, biodiversity, and air- and water-quality
-				benefits.
+				This website provides access to statewide maps, data, and documentation for the Minnesota
+				Lowland Conifer Peatland Carbon project. Maps can be viewed in the MNLCC viewer and include
+				peat probability, depth, decomposition, and carbon layers.
 			</p>
-			<p>The project's objectives are to:</p>
-			<ul>
-				<li>Map statewide peatland extent, depth, decomposition, and carbon stock.</li>
-				<li>Validate those statewide models against a 2025 field campaign.</li>
-				<li>Synthesize existing peatland management science.</li>
-				<li>Integrate carbon stock estimates with management sensitivity.</li>
-			</ul>
-			<p>
-				The project is organized as a connected system of field observations, a statewide
-				covariate data stack, and digital soil mapping models. There are two major components to
-				the project:
-			</p>
-			<ul>
-				<li>Map</li>
-				<li>Database</li>
-			</ul>
-			<p>This project is led by the Jelinski Lab at the University of Minnesota.</p>
 		</div>
 	</section>
 
@@ -94,15 +73,15 @@ import { withBase } from '../utils/paths';
 
 	<section class="framework-section" aria-labelledby="map-heading">
 		<div class="content-container">
-			<h2 id="map-heading">Map</h2>
+			<h2 id="map-heading">MNLCC Layers</h2>
 			<p>
-				The Map is a stack of statewide digital soil map products at 10m resolution. It includes a
-				peatland probability model that predicts the likelihood of peat occurrence, a peat depth
-				model, an organic decomposition model that predicts fibric, hemic, and sapric composition
-				in the top meter of peat, and a carbon stock model that estimates full-profile carbon
-				storage from the depth prediction. Each model was trained using field point observations and
-				a statewide covariate stack of terrain, hydrology, climate, and satellite imagery data, and
-				evaluated using spatial block cross-validation.
+				The MNLCC viewer contains a stack of statewide digital soil map products at 10m
+				resolution. It includes a peatland probability model that predicts the likelihood of peat
+				occurrence, a peat depth model, an organic decomposition model that predicts fibric, hemic,
+				and sapric composition in the top meter of peat, and a carbon stock model that estimates
+				full-profile carbon stock derived from the depth model. Each model was trained using field
+				point observations and a statewide covariate stack of terrain, hydrology, climate, and
+				satellite imagery data.
 			</p>
 			<div class="figure-placeholder"><span>Map framework figure</span></div>
 		</div>
@@ -113,9 +92,9 @@ import { withBase } from '../utils/paths';
 			<h2 id="database-heading">Database</h2>
 			<p>
 				The Database brings together the field observations and training data used to build the
-				mapping models. Sources include the Minnesota DNR Peat Inventory (1970s–1980s), NRCS NASIS
-				pedon data, Minnesota Biological Survey relevé data, and a 2025 field campaign that measured
-				peat depth, collected peat and vegetation samples, and surveyed forest structure on
+				models. Sources include the Minnesota DNR Peat Inventory, The National Soil Information
+				System (NASIS) pedon data, Minnesota Biological Survey relevé data, and 2025 field
+				verification data that measured peat depth and collected peat and vegetation samples on
 				Minnesota School Trust lands.
 			</p>
 			<div class="figure-placeholder"><span>Database framework figure</span></div>
