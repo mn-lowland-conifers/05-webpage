@@ -5,18 +5,17 @@ import Layout from '../../layouts/Layout.astro';
 <Layout title="Database" description="The point observations behind the peatland carbon maps: sources, the DNR Peat Inventory, gap-fill quality tiers, and carbon stock.">
 	<h1>Database</h1>
 	<p>
-		The database contains the point data that was brought together to build the prediction models.
-		Independent field data collected in the summer of 2025 was used as a validation dataset. This page
-		walks through where the data came from, how the Minnesota DNR Peat Inventory was processed, and what
-		the resulting carbon stock values look like.
+		The database contains the point data that was consolidated to build the prediction models.
+		Independent field data collected in the summer of 2025 was used as a validation dataset.
 	</p>
 
 	<section class="db-section">
 		<h2>Training data</h2>
 		<p>
-			Three soil observation sources were combined: the Minnesota DNR Peat Inventory, the USDA National
-			Soil Information System (NASIS) pedon data, and Minnesota Biological Survey (MBS) relevé data.
-			Each source was filtered into the dataset used by each model.
+			Three sources were combined to be used as point data. The Minnesota DNR Peat Inventory, the
+			USDA National Soil Information System (NASIS) pedon data, and Minnesota Biological Survey
+			(MBS) relevé data. Point datasets were filtered depending on the property being modeled. More
+			information on the point data can be found in the <a href="https://mn-lowland-conifers.github.io/03-peatland-carbon-modeling/" target="_blank" rel="noopener noreferrer">MN Peatland Carbon Modeling E-book</a>.
 		</p>
 		<div class="table-wrap">
 			<table>
@@ -30,37 +29,22 @@ import Layout from '../../layouts/Layout.astro';
 				</tbody>
 			</table>
 		</div>
-		<ul>
-			<li>
-				<strong>MN DNR Peat Inventory.</strong> Collected in the 1970s and 1980s. Probe-measured peat
-				depths across Minnesota peatlands plus horizon-level laboratory data: von Post decomposition
-				class, bulk density, carbon content and ash content.
-			</li>
-			<li>
-				<strong>NASIS.</strong> Soil profile descriptions of mineral and organic soils from the
-				USDA NRCS soil survey database.
-			</li>
-			<li>
-				<strong>Minnesota Biological Survey.</strong> Presence and absence observations inferred from
-				native plant community types. Peat-associated communities count as peat present and upland
-				communities as peat absent, so these points inform peat occurrence only.
-			</li>
-		</ul>
 	</section>
 
 	<section class="db-section">
 		<h2>MN DNR Peat Inventory</h2>
 		<p>
-			The Peat Inventory tables were merged on site ID into one horizon-level table, so that ash, carbon,
-			bulk density and classification sit together. The result is 35,142 horizons from 7,032 pedons. Missing
-			top or bottom depths were filled from adjacent horizons where possible. Horizons that could not be
-			corrected were flagged, then extended to the next horizon or to a maximum depth of 200 cm.
+			Peat Inventory tables were merged on site ID into one horizon-level table so all lab
+			measurements (ash, carbon, bulk density, and classification) are together. This resulted in
+			35,142 horizons from 7,032 pedons. Missing top or bottom depths were filled from adjacent
+			horizons where possible. Horizons that could not be corrected are extended to the next
+			horizon or to a maximum depth of 200 cm.
 		</p>
 	</section>
 
 	<section class="db-section">
 		<h2>Filling the gaps</h2>
-		<p>SOC and Db were then gap filled using the best method available based on existing data:</p>
+		<p>Soil organic carbon (SOC) and bulk density (Db) were then gap filled using the best method available based on existing data:</p>
 		<ol>
 			<li>Measured lab data: used when available (SOC: 533 horizons, BD: 3,209 horizons).</li>
 			<li>
@@ -74,17 +58,11 @@ import Layout from '../../layouts/Layout.astro';
 				R²=−0.051).
 			</li>
 			<li>
-				Still missing: horizons with no von Post score either were left unfilled and excluded from carbon
+				Still missing: horizons with no von Post score are left unfilled and excluded from carbon
 				stock calculation
 			</li>
 		</ol>
 		<div class="chart" data-chart="gap"></div>
-		<p>
-			Because the rf fill performed poorly this was determined to be a property of the data as the SOC in
-			peat stays relatively constant (mean 50.67% and a std of 4.77%). So there is little variance for the
-			rf features to explain. Db was found to be more variable than SOC and a class mean fill for Db would
-			have more uncertainty than SOC.
-		</p>
 		<div class="chart-pair">
 			<div class="chart chart-half" data-chart="bd-ash"></div>
 			<div class="chart chart-half" data-chart="soc-ash"></div>
@@ -115,8 +93,7 @@ import Layout from '../../layouts/Layout.astro';
 	<section class="db-section">
 		<h2>Quality tiers</h2>
 		<p>
-			After gap filling was complete the filled values were flagged by the method used to track data
-			quality:
+			After gap filling, the filled values were flagged by the method used to track data quality:
 		</p>
 		<ul>
 			<li><strong style="color:#1B9E77">Tier 1</strong>: no RF-filled values used (measured or ash-regression only, 503 pedons, 13.1%)</li>
@@ -125,10 +102,6 @@ import Layout from '../../layouts/Layout.astro';
 		</ul>
 		<div class="chart" data-chart="tiers"></div>
 		<div class="chart" data-chart="tier-box"></div>
-	</section>
-
-	<section class="db-section">
-		<h2>Carbon stock from the point data</h2>
 		<p>
 			For each eligible pedon carbon stock is calculated by horizon by multiplying the depth increment ×
 			bulk density × SOC fraction, and then summed across all organic horizons in the profile.
@@ -149,15 +122,9 @@ import Layout from '../../layouts/Layout.astro';
 	<section class="db-section">
 		<h2>2025 field data</h2>
 		<p>
-			The 2025 field verification data measured peat depth and collected peat and vegetation samples on
-			Minnesota School Trust lands. Peat cores were collected in the field with a Russian peat auger.
-			Cores were then horizonated and described recording characteristics such as Von Post humification
-			score (H1-H10), fiber content (%), and Munsell color. Sample prep and analysis followed the NRCS
-			Soil Survey Field and Laboratory Methods Manual (SSIR 51).
-		</p>
-		<p>
-			Full methods are in the
-			<a href="https://mn-lowland-conifers.github.io/03-peatland-carbon-modeling/" target="_blank" rel="noopener noreferrer">documentation e-book</a>.
+			In the summer of 2025, a field campaign was run to gather verification data by measuring peat
+			depth, collecting peat samples, and gathering vegetation data on school trust land across the
+			state of Minnesota.
 		</p>
 	</section>
 
@@ -169,6 +136,10 @@ import Layout from '../../layouts/Layout.astro';
 <style>
 	.db-section {
 		padding: 1.5rem 0 1rem;
+	}
+
+	.db-section > *:last-child {
+		margin-bottom: 0;
 	}
 
 	.db-section h2 {
