@@ -85,13 +85,13 @@ import { withBase } from '../utils/paths';
 			</p>
 			<div class="viewer-gallery">
 				<figure>
-					<img src={withBase('images/mnlcc-viewer/probability.png')} alt="MNLCC Viewer screenshot of the peatland probability layer" width="517" height="507" loading="lazy" />
+					<img src={withBase('images/mnlcc-viewer/probability.png')} alt="MNLCC Viewer screenshot of the peatland probability layer" width="664" height="644" loading="lazy" />
 				</figure>
 				<figure>
-					<img src={withBase('images/mnlcc-viewer/depth.png')} alt="MNLCC Viewer screenshot of the predicted peat depth layer" width="517" height="506" loading="lazy" />
+					<img src={withBase('images/mnlcc-viewer/depth.png')} alt="MNLCC Viewer screenshot of the predicted peat depth layer" width="662" height="640" loading="lazy" />
 				</figure>
 				<figure>
-					<img src={withBase('images/mnlcc-viewer/carbon.png')} alt="MNLCC Viewer screenshot of the belowground carbon stock layer" width="515" height="508" loading="lazy" />
+					<img src={withBase('images/mnlcc-viewer/carbon.png')} alt="MNLCC Viewer screenshot of the belowground carbon stock layer" width="659" height="645" loading="lazy" />
 				</figure>
 			</div>
 		</div>
@@ -329,27 +329,19 @@ import { withBase } from '../utils/paths';
 
 		.viewer-gallery figure {
 			margin: 0;
-			aspect-ratio: 5 / 11;
 			border: 1px solid var(--border);
 			background: #ffffff;
-			overflow: hidden;
 		}
 
 		.viewer-gallery img {
 			display: block;
 			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: right bottom;
+			height: auto;
 		}
 
 		@media (width <= 700px) {
 			.viewer-gallery {
 				grid-template-columns: 1fr;
-			}
-
-			.viewer-gallery figure {
-				aspect-ratio: 517 / 507;
 			}
 		}
 
