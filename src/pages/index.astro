@@ -86,12 +86,15 @@ import { withBase } from '../utils/paths';
 			<div class="viewer-gallery">
 				<figure>
 					<img src={withBase('images/mnlcc-viewer/probability.png')} alt="MNLCC Viewer screenshot of the peatland probability layer" width="664" height="644" loading="lazy" />
+					<figcaption>Peat probability</figcaption>
 				</figure>
 				<figure>
 					<img src={withBase('images/mnlcc-viewer/depth.png')} alt="MNLCC Viewer screenshot of the predicted peat depth layer" width="662" height="640" loading="lazy" />
+					<figcaption>Peat depth</figcaption>
 				</figure>
 				<figure>
 					<img src={withBase('images/mnlcc-viewer/carbon.png')} alt="MNLCC Viewer screenshot of the belowground carbon stock layer" width="659" height="645" loading="lazy" />
+					<figcaption>Full-profile carbon stock</figcaption>
 				</figure>
 			</div>
 		</div>
@@ -255,7 +258,7 @@ import { withBase } from '../utils/paths';
 			right: 0.65rem;
 		}
 
-		figcaption {
+		.comparison-figure figcaption {
 			color: #555555;
 			text-align: center;
 			background: #f1f1f1;
@@ -302,7 +305,7 @@ import { withBase } from '../utils/paths';
 				display: none;
 			}
 
-			figcaption {
+			.comparison-figure figcaption {
 				font-size: 0.8rem;
 			}
 		}
@@ -323,20 +326,28 @@ import { withBase } from '../utils/paths';
 		.viewer-gallery {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
+			align-items: start;
 			gap: 0.75rem;
 			margin-top: 1.25rem;
 		}
 
 		.viewer-gallery figure {
 			margin: 0;
-			border: 1px solid var(--border);
-			background: #ffffff;
 		}
 
 		.viewer-gallery img {
 			display: block;
 			width: 100%;
 			height: auto;
+			border: 1px solid var(--border);
+			background: #ffffff;
+		}
+
+		.viewer-gallery figcaption {
+			text-align: left;
+			color: var(--muted);
+			font-size: 0.9rem;
+			margin-top: 0.4rem;
 		}
 
 		@media (width <= 700px) {
