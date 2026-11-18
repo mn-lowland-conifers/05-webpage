@@ -86,15 +86,12 @@ import { withBase } from '../utils/paths';
 			<div class="viewer-gallery">
 				<figure>
 					<img src={withBase('images/mnlcc-viewer/probability.png')} alt="MNLCC Viewer screenshot of the peatland probability layer" width="517" height="507" loading="lazy" />
-					<figcaption>Peatland Probability</figcaption>
 				</figure>
 				<figure>
 					<img src={withBase('images/mnlcc-viewer/depth.png')} alt="MNLCC Viewer screenshot of the predicted peat depth layer" width="517" height="506" loading="lazy" />
-					<figcaption>Predicted Peat Depth</figcaption>
 				</figure>
 				<figure>
 					<img src={withBase('images/mnlcc-viewer/carbon.png')} alt="MNLCC Viewer screenshot of the belowground carbon stock layer" width="515" height="508" loading="lazy" />
-					<figcaption>Belowground Carbon Stock</figcaption>
 				</figure>
 			</div>
 		</div>
@@ -109,6 +106,17 @@ import { withBase } from '../utils/paths';
 				System (NASIS) pedon data, Minnesota Biological Survey relevé data, and 2025 field
 				verification data that measured peat depth and collected peat and vegetation samples on
 				Minnesota School Trust lands.
+			</p>
+		</div>
+	</section>
+
+	<section class="framework-section" aria-labelledby="documentation-heading">
+		<div class="content-container">
+			<h2 id="documentation-heading">Documentation</h2>
+			<p>
+				Full methods documentation for this project is published as the MN Peatland Carbon
+				Modeling e-book. It covers the workflow behind the statewide mapping products including
+				point and covariate data processing, model training and validation, and results.
 			</p>
 		</div>
 	</section>
@@ -315,35 +323,33 @@ import { withBase } from '../utils/paths';
 		.viewer-gallery {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
-			gap: 1rem;
+			gap: 0.75rem;
 			margin-top: 1.25rem;
 		}
 
 		.viewer-gallery figure {
 			margin: 0;
+			aspect-ratio: 5 / 11;
 			border: 1px solid var(--border);
-			border-radius: 8px;
-			overflow: hidden;
 			background: #ffffff;
+			overflow: hidden;
 		}
 
 		.viewer-gallery img {
 			display: block;
 			width: 100%;
-			height: auto;
-		}
-
-		.viewer-gallery figcaption {
-			background: #f1f1f1;
-			color: #555555;
-			text-align: center;
-			font-size: 0.82rem;
-			padding: 0.5rem 0.4rem;
+			height: 100%;
+			object-fit: cover;
+			object-position: right bottom;
 		}
 
 		@media (width <= 700px) {
 			.viewer-gallery {
 				grid-template-columns: 1fr;
+			}
+
+			.viewer-gallery figure {
+				aspect-ratio: 517 / 507;
 			}
 		}
 
