@@ -12,7 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.2.9"
+    "astro": "^7.2.9",
+    "plotly.js-cartesian-dist-min": "^2.35.2"
   },
   "allowScripts": {
     "esbuild": true
