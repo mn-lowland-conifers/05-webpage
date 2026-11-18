@@ -46,14 +46,14 @@ import { withBase } from '../utils/paths';
 					aria-label="Compare mapped peat depth with satellite imagery"
 				/>
 			</div>
-			<figcaption>Comparison of the predicted peat depth map (left) against satellite imagery (right)</figcaption>
+			<figcaption>Example comparison of MNLCC Viewer products; LEFT: predicted peat depth (color ramp, increasing from purple to orange) for an area of Minnesota.</figcaption>
 		</figure>
 
 		<div class="overview">
 			<p>
 				This website provides access to statewide maps, data, and documentation for the Minnesota
 				Lowland Conifer Peatland Carbon project. Maps can be viewed in the MNLCC viewer and include
-				peat probability, depth, decomposition, and carbon layers.
+				peat probability, depth, and carbon layers.
 			</p>
 		</div>
 	</section>
@@ -71,18 +71,32 @@ import { withBase } from '../utils/paths';
 		});
 	</script>
 
-	<section class="framework-section" aria-labelledby="map-heading">
+	<section class="framework-section" aria-labelledby="viewer-heading">
 		<div class="content-container">
-			<h2 id="map-heading">MNLCC Layers</h2>
+			<h2 id="viewer-heading">MNLCC Viewer</h2>
 			<p>
+				This is the project's interactive interface for exploring its statewide map products.
 				The MNLCC viewer contains a stack of statewide digital soil map products at 10m
-				resolution. It includes a peatland probability model that predicts the likelihood of peat
-				occurrence, a peat depth model, an organic decomposition model that predicts fibric, hemic,
-				and sapric composition in the top meter of peat, and a carbon stock model that estimates
-				full-profile carbon stock derived from the depth model. Each model was trained using field
-				point observations and a statewide covariate stack of terrain, hydrology, climate, and
-				satellite imagery data.
+				resolution. It includes a peatland probability raster, peat depth raster, and a carbon
+				stock raster that estimates full-profile carbon stock derived from the depth model. It
+				also contains reference layers including a NLCD derived land cover mask, the predicted
+				peat extent at the probability threshold, and a gSSURGO histosol percent of map unit
+				layer.
 			</p>
+			<div class="viewer-gallery">
+				<figure>
+					<img src={withBase('images/mnlcc-viewer/probability.png')} alt="MNLCC Viewer screenshot of the peatland probability layer" width="517" height="507" loading="lazy" />
+					<figcaption>Peatland Probability</figcaption>
+				</figure>
+				<figure>
+					<img src={withBase('images/mnlcc-viewer/depth.png')} alt="MNLCC Viewer screenshot of the predicted peat depth layer" width="517" height="506" loading="lazy" />
+					<figcaption>Predicted Peat Depth</figcaption>
+				</figure>
+				<figure>
+					<img src={withBase('images/mnlcc-viewer/carbon.png')} alt="MNLCC Viewer screenshot of the belowground carbon stock layer" width="515" height="508" loading="lazy" />
+					<figcaption>Belowground Carbon Stock</figcaption>
+				</figure>
+			</div>
 		</div>
 	</section>
 
@@ -296,6 +310,41 @@ import { withBase } from '../utils/paths';
 
 		.framework-section p {
 			margin: 0;
+		}
+
+		.viewer-gallery {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1rem;
+			margin-top: 1.25rem;
+		}
+
+		.viewer-gallery figure {
+			margin: 0;
+			border: 1px solid var(--border);
+			border-radius: 8px;
+			overflow: hidden;
+			background: #ffffff;
+		}
+
+		.viewer-gallery img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+		.viewer-gallery figcaption {
+			background: #f1f1f1;
+			color: #555555;
+			text-align: center;
+			font-size: 0.82rem;
+			padding: 0.5rem 0.4rem;
+		}
+
+		@media (width <= 700px) {
+			.viewer-gallery {
+				grid-template-columns: 1fr;
+			}
 		}
 
 	</style>
